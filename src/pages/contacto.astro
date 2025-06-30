@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contacto | AgenciaX" description="Hablemos sobre tu proyecto y cómo podemos ayudarte.">
+  <section class="hero">
+    <div class="container">
+      <h1>Contacto</h1>
+      <p>¿Listo para llevar tu marca al siguiente nivel? Escríbenos.</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <form class="grid" name="contacto" method="POST" data-netlify="true">
+        <input type="text" name="nombre" placeholder="Tu nombre" required class="card" />
+        <input type="email" name="email" placeholder="Tu correo" required class="card" />
+        <textarea name="mensaje" placeholder="Tu mensaje" required class="card" rows="5"></textarea>
+        <button type="submit" class="button">Enviar</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

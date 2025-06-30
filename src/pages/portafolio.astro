@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { fetchProjects } from '../lib/api';
+
+const projects = await fetchProjects();
+---
+
+<BaseLayout title="Portafolio | AgenciaX" description="Casos de éxito en branding, diseño y estrategia digital.">
+  <section class="hero">
+    <div class="container">
+      <h1>Portafolio</h1>
+      <p>Proyectos reales que reflejan nuestro enfoque creativo y estratégico.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Casos de éxito</h2>
+      <div class="grid-xl">
+        {projects.map(p => (
+          <ProjectCard
+            title={p.title}
+            description={p.description}
+            image={p.image}
+            url={p.url}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

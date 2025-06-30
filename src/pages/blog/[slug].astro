@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { fetchBlogPosts, fetchSinglePost } from '../../lib/api';
+
+export async function getStaticPaths() {
+  const posts = await fetchBlogPosts();
+  console.log('Slugs generados:', posts.map(p => p.slug));
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout title={`${post.title} | Blog`} description={post.excerpt || post.title}>
+  <article class="section container blog-post">
+    <h1 class="post-title">{post.title}</h1>
+    <p class="post-date">{new Date(post.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+    <div class="post-content" set:html={post.content} />
+  </article>
+</BaseLayout>

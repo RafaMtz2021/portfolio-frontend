@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { fetchBlogPosts } from '../lib/api';
+
+const posts = await fetchBlogPosts();
+---
+
+<BaseLayout title="Blog | AgenciaX" description="Ideas, consejos y noticias sobre branding, marketing y diseño web.">
+  <section class="hero">
+    <div class="container">
+      <h1>Blog de AgenciaX</h1>
+      <p>Explora ideas, recursos y conocimientos que impulsan marcas creativas.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Últimos Artículos</h2>
+      <div class="grid-xl">
+        {posts.map(p => (
+          <div class="card">
+            <h3><a href={`/blog/${p.slug}`} class="blog-title">{p.title}</a></h3>
+            <p class="blog-date">{new Date(p.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+            {p.excerpt && <p class="blog-excerpt">{p.excerpt}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { fetchServices } from "../lib/api";
+
+const services = await fetchServices();
+---
+
+<BaseLayout title="Servicios">
+  <section class="section">
+    <div class="container">
+      <h2>Proyectos Destacados</h2>
+      <div class="grid-xl">
+        {
+          services.map((s) => (
+            <ServiceCard
+              title={s.title}
+              description={s.description}
+              icon={s.icon}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

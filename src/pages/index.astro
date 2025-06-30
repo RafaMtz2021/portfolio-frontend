@@ -1,16 +1,49 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Inicio | AgenciaX" description="Publicidad moderna, diseño estratégico y resultados medibles.">
+  <section class="hero">
+    <div class="container">
+      <h1>Impulsamos marcas que dejan huella</h1>
+      <p>Somos tu equipo creativo aliado: diseño, estrategia y resultados concretos para tu negocio.</p>
+      <a href="/servicios" class="button">Ver servicios</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Lo que hacemos</h2>
+      <div class="grid-xl">
+        <div class="card">
+          <h3>Identidad de Marca</h3>
+          <p>Construimos marcas sólidas con propósito y personalidad visual clara.</p>
+        </div>
+        <div class="card">
+          <h3>Marketing Digital</h3>
+          <p>Campañas efectivas en redes sociales, Google Ads y estrategias de contenido.</p>
+        </div>
+        <div class="card">
+          <h3>Diseño Web</h3>
+          <p>Sitios modernos, responsivos y optimizados para generar resultados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Proyectos recientes</h2>
+      <div class="grid-xl">
+        <div class="card">
+          <h3>Rediseño: Café Nova</h3>
+          <p>Branding, empaque y campaña de lanzamiento en plataformas digitales.</p>
+        </div>
+        <div class="card">
+          <h3>Landing: Clínica Vida</h3>
+          <p>Diseño y desarrollo de página optimizada para captar pacientes potenciales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

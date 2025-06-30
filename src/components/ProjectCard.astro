@@ -1,0 +1,13 @@
+---
+import { getImageUrl } from '../lib/api';
+const { title, description, image, url } = Astro.props;
+console.log("URL: ",url)
+---
+
+<a href={url} class="project-card">
+  <img src={image} alt={title} />
+  <div class="p-4">
+    <h3>{title}</h3>
+    <div class="service-description" set:html={description} />
+  </div>
+</a>
