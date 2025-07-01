@@ -1,10 +1,19 @@
 ---
 const { title, description, icon } = Astro.props;
+
+// 👉 Función para optimizar una URL de Cloudinary
+function optimizeCloudinaryUrl(url: string, transformations = 'f_auto,q_50,w_auto') {
+  return url?.includes('/upload/') ? url.replace('/upload/', `/upload/${transformations}/`) : url;
+}
+
+const optimizedIcon = optimizeCloudinaryUrl(icon);
 ---
 
 <div class="service-card">
   <div class="service-icon">
-    <img src={icon} alt={title} loading="lazy" />
+    {optimizedIcon && (
+      <img src={optimizedIcon} alt={title} loading="lazy" />
+    )}
   </div>
   <h3 class="service-title">{title}</h3>
   <!-- <p class="service-description">{description}</p> -->
