@@ -621,3 +621,27 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
   background-color: var(--color-primary-light, #415a77); /* azul claro al hacer hover */
 }
+
+/* main page  */
+.intro {
+  display: flex;
+}
+
+.intro-text {
+  padding: 2rem;
+}
+
+.profile-image {
+  border-radius: 8px;
+}
+
+.blog-button {
+  text-align: center;
+  ::hover {
+    color: var(--accent);
+  }
+}
+
+.linkedin {
+  text-align: center;
+}

@@ -1,31 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// 👉 Función para optimizar imágenes de Cloudinary
+function optimizeCloudinaryUrl(url: string, transformations = 'f_auto,q_80,w_300') {
+  return url?.includes('/upload/') ? url.replace('/upload/', `/upload/${transformations}/`) : url;
+}
+
+const image = "https://res.cloudinary.com/diwtre00s/image/upload/v1752179993/IMG_20250620_111731_-_copia_nt5rdb.jpg";
+
+const optimizedImage = optimizeCloudinaryUrl(image);
 ---
 
-<BaseLayout title="Inicio | AgenciaX" description="Publicidad moderna, diseño estratégico y resultados medibles.">
+<BaseLayout title="Inicio | Rafael Martínez" description="Desarrollador Frontend especializado en React, Astro, Next.js y más.">
   <section class="hero">
     <div class="container">
-      <h1>Impulsamos marcas que dejan huella</h1>
-      <p>Somos tu equipo creativo aliado: diseño, estrategia y resultados concretos para tu negocio.</p>
-      <a href="/servicios" class="button">Ver servicios</a>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Lo que hacemos</h2>
-      <div class="grid-xl">
-        <div class="card">
-          <h3>Identidad de Marca</h3>
-          <p>Construimos marcas sólidas con propósito y personalidad visual clara.</p>
-        </div>
-        <div class="card">
-          <h3>Marketing Digital</h3>
-          <p>Campañas efectivas en redes sociales, Google Ads y estrategias de contenido.</p>
-        </div>
-        <div class="card">
-          <h3>Diseño Web</h3>
-          <p>Sitios modernos, responsivos y optimizados para generar resultados.</p>
+      <div class="intro">
+        <img src={optimizedImage} alt="Foto de Rafael" class="profile-image" />
+        <div class="intro-text">
+          <h1>Rafael Martínez</h1>
+          <p class="subtitle">Frontend Developer | React.js | Astro | Next.js | Gatsby</p>
+          <p>
+            Apasionado por construir experiencias digitales de alto impacto. Especializado en interfaces rápidas, limpias y centradas en el usuario, usando tecnologías modernas como React y CMS desacoplados.
+          </p>
+          <p>
+            Siempre en evolución: actualmente explorando el potencial de la inteligencia artificial y profundizando en Python. Amante de los gatos y de resolver problemas reales con código.
+          </p>
+          <a href="/blog" class="blog-button">Ver blog</a>
         </div>
       </div>
     </div>
@@ -33,16 +33,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <section class="section">
     <div class="container">
-      <h2>Proyectos recientes</h2>
-      <div class="grid-xl">
-        <div class="card">
-          <h3>Rediseño: Café Nova</h3>
-          <p>Branding, empaque y campaña de lanzamiento en plataformas digitales.</p>
-        </div>
-        <div class="card">
-          <h3>Landing: Clínica Vida</h3>
-          <p>Diseño y desarrollo de página optimizada para captar pacientes potenciales.</p>
-        </div>
+      <h2>Habilidades Técnicas</h2>
+      <ul class="skills-list">
+        <li>React.js</li>
+        <li>Next.js</li>
+        <li>Astro</li>
+        <li>Gatsby.js</li>
+        <li>Headless CMS (Directus, Strapi, Payload)</li>
+        <li>HTML / CSS / JS</li>
+        <li>Python (en progreso)</li>
+        <li>Integración de IA</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Linkedin</h2>
+      <div class="linkedin">
+        <a 
+          href="https://www.linkedin.com/in/rafael-martinez-reyes/" 
+          class="blog-button"
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Linkedin
+        </a>
       </div>
     </div>
   </section>
