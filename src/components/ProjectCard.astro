@@ -1,11 +1,16 @@
 ---
-import { getImageUrl } from '../lib/api';
+import { getImageUrl } from "../lib/api";
 
 const { title, description, image, url } = Astro.props;
 
 // 👉 Función para optimizar imágenes de Cloudinary
-function optimizeCloudinaryUrl(url: string, transformations = 'f_auto,q_50,w_auto') {
-  return url?.includes('/upload/') ? url.replace('/upload/', `/upload/${transformations}/`) : url;
+function optimizeCloudinaryUrl(
+  url: string,
+  transformations = "f_auto,q_50,w_auto"
+) {
+  return url?.includes("/upload/")
+    ? url.replace("/upload/", `/upload/${transformations}/`)
+    : url;
 }
 
 const optimizedImage = optimizeCloudinaryUrl(image);
@@ -13,7 +18,7 @@ const optimizedImage = optimizeCloudinaryUrl(image);
 console.log("URL: ", url);
 ---
 
-<a href={url} class="project-card">
+<a href={url} class="project-card" target="_blank" rel="noopener noreferrer">
   <img src={optimizedImage} alt={title} loading="lazy" />
   <div class="p-4">
     <h3>{title}</h3>
