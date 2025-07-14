@@ -1,0 +1,88 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+}
+
+.memory-card {
+  position: absolute;
+  width: 220px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  margin-left: -110px;
+  margin-top: -150px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* No necesidad de preserve-3d o flip */
+}
+
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: #222;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.memory-date {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.memory-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin: 10px 0;
+  font-size: 2rem;
+  color: #f0f;
+}
+
+.memory-preview {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #ccc;
+}
+
+.glitch-effect {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 60%, rgba(255, 0, 255, 0.3) 70%, transparent 80%);
+  animation: glitch 3s linear infinite;
+}
+
+@keyframes glitch {
+  0% { background-position: 0 0; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0 0; }
+}

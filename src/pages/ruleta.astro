@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+// import BoletosCarrusel from "../components/BoletosCarrusel.jsx";
+import CarruselCards from "../components/CarruselCards.jsx";
+---
+
+<BaseLayout title="Boletos">
+  <section class="section">
+    <div class="container">
+      <h2>Boletos en Carrusel</h2>
+      <!-- <BoletosCarrusel client:load /> -->
+      <CarruselCards client:load />
+    </div>
+  </section>
+</BaseLayout>
