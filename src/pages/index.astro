@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // 👉 Función para optimizar imágenes de Cloudinary
-function optimizeCloudinaryUrl(url: string, transformations = 'f_auto,q_80,w_300') {
+function optimizeCloudinaryUrl(url: string, transformations = 'f_auto,q_100,w_300') {
   return url?.includes('/upload/') ? url.replace('/upload/', `/upload/${transformations}/`) : url;
 }
 

@@ -134,6 +134,12 @@ img {
   padding: 1rem;
 }
 
+@media (max-width: 769px) {
+  .hero {
+    margin-top: 3rem;
+  }
+}
+
 .hero h1 {
   font-size: 2.75rem;
   font-weight: 700;
@@ -312,7 +318,8 @@ form button {
 }
 
 form button:hover {
-  background-color: #0ea5e9; /* un azul un poco más intenso */
+  background-color: #0ea5e9;
+  /* un azul un poco más intenso */
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(56, 189, 248, 0.35);
 }
@@ -495,7 +502,7 @@ body.expanded .user-info {
 }
 
 @media (max-width: 769px) {
-  .sidebar-top  {
+  .sidebar-top {
     display: flex;
     justify-content: center;
   }
@@ -576,7 +583,8 @@ body.no-scroll {
   opacity: 0;
   white-space: nowrap;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  color: var(--accent); /* azul como deseado */
+  color: var(--accent);
+  /* azul como deseado */
 }
 
 .sidebar.open .label,
@@ -584,8 +592,7 @@ body.no-scroll {
 .sidebar:hover .label,
 .sidebar:hover .user-info,
 .sidebar:hover .search-box input,
-.sidebar.open .search-box input
-body.expanded .label,
+.sidebar.open .search-box input body.expanded .label,
 body.expanded .user-info {
   visibility: visible;
   opacity: 1;
@@ -594,9 +601,12 @@ body.expanded .user-info {
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: var(--color-bg, #2b2b2b); /* fondo más oscuro */
-  color: var(--color-text, #f0f0f0); /* texto claro */
-  border: 1px solid var(--color-border, #999); /* bordes visibles */
+  background-color: var(--color-bg, #2b2b2b);
+  /* fondo más oscuro */
+  color: var(--color-text, #f0f0f0);
+  /* texto claro */
+  border: 1px solid var(--color-border, #999);
+  /* bordes visibles */
   border-radius: 8px;
   overflow: hidden;
   font-size: 1rem;
@@ -604,27 +614,38 @@ table {
 }
 
 thead {
-  background-color: var(--color-bg-alt, #3a3a3a); /* cabecera más clara que el fondo */
+  background-color: var(--color-bg-alt, #3a3a3a);
+  /* cabecera más clara que el fondo */
 }
 
 thead th,
 tbody td {
   padding: 0.75rem 1rem;
   text-align: left;
-  border: 1px solid var(--color-border, #999); /* mismo color para todos */
+  border: 1px solid var(--color-border, #999);
+  /* mismo color para todos */
 }
 
 tbody tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.04); /* sutil diferencia para filas pares */
+  background-color: rgba(255, 255, 255, 0.04);
+  /* sutil diferencia para filas pares */
 }
 
 tbody tr:hover {
-  background-color: var(--color-primary-light, #415a77); /* azul claro al hacer hover */
+  background-color: var(--color-primary-light, #415a77);
+  /* azul claro al hacer hover */
 }
 
 /* main page  */
 .intro {
   display: flex;
+}
+
+@media (max-width: 769px) {
+  .intro {
+    flex-direction: column;
+  }
+
 }
 
 .intro-text {
@@ -637,6 +658,7 @@ tbody tr:hover {
 
 .blog-button {
   text-align: center;
+
   ::hover {
     color: var(--accent);
   }
